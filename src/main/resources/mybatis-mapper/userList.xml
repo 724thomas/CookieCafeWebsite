@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.cookiecafewebsite.mapper.userMapper">
+    <select id="checkUserExist" resultType="com.example.cookiecafewebsite.entity.CustomerEntity" parameterType="String">
+        select
+            *
+        from
+            customer
+        where
+            id = #{id}
+    </select>
+
+    <insert id="insertUser" parameterType="com.example.cookiecafewebsite.entity.CustomerEntity">
+        insert into customer
+        (id, pw, name, phone, address, email, gender, sns, birth, addressdetail)
+        values
+        (#{id}, #{pw}, #{name}, #{phone}, #{address}, #{email}, #{gender}, #{sns}, #{birth}, #{addressDetail})
+    </insert>
+
+    <select id="login" resultType="com.example.cookiecafewebsite.entity.CustomerEntity" parameterType="String">
+        select
+            *
+        from
+            customer
+        where
+            id = #{id}
+    </select>
+</mapper>

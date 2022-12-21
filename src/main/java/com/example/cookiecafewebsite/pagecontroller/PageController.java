@@ -37,12 +37,12 @@ public class PageController {
 
     @GetMapping("/productList")
     public String productList(SearchDto params, Model model) {
-        ProductList product = ps.findAll(params);
-        model.addAttribute("product", product);
-        String key=params.getKeyword();
-        if(key!=null){
-            model.addAttribute("keyword", params.getKeyword());
-        }
+//        ProductList product = ps.findAll(params);
+//        model.addAttribute("product", product);
+//        String key=params.getKeyword();
+//        if(key!=null){
+//            model.addAttribute("keyword", params.getKeyword());
+//        }
 
         return "productlist";
     }
